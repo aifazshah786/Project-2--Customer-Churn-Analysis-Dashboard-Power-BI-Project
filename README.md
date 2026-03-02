@@ -65,7 +65,7 @@ Price sensitivity features were present but not among the strongest predictors.
 
 ---
 
-## ❓ Hypothesis Result
+##  Hypothesis Result
 
 Is churn mainly driven by price sensitivity?
 
