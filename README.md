@@ -2,120 +2,109 @@
 
 ##  Project Summary
 
-This project analyzes customer churn for PowerCo (an energy company).  
-The goal is to understand why customers leave and test whether churn is mainly driven by price sensitivity.
+This project analyzes customer churn for PowerCo (SME division).  
+The objective was to understand the main drivers of churn and test whether price sensitivity is the primary reason customers leave.
 
-We used data analysis, feature engineering, and machine learning to identify the key drivers of churn and provide business recommendations.
+Using exploratory data analysis, feature engineering, and machine learning, we identified the key business drivers behind churn.
 
 ---
 
 ##  Business Problem
 
-PowerCo is facing customer churn which impacts:
+PowerCo is experiencing customer churn in its SME division.
 
-- Revenue
-- Profitability
-- Customer lifetime value
+- ~15,000 customers analyzed  
+- Nearly 10% churn rate  
 
-The main hypothesis from the business was:
+Churn directly impacts revenue, margins, and long-term profitability.
 
-> Is churn driven by customers' price sensitivity?
+The main business hypothesis:
 
-This project tests that hypothesis using data.
+> Is churn primarily driven by customer price sensitivity?
 
 ---
 
 ## 📊 Exploratory Data Analysis (EDA)
 
-Key findings from visual analysis:
+Key observations:
 
-- Annual consumption (`cons_12m`) is one of the strongest indicators of churn.
-- Time-related features (tenure, months active, contract renewal timing) strongly influence churn.
-- Customers close to contract renewal are more likely to churn.
-- High consumption customers behave differently compared to low consumption customers.
-- Price variation features exist but are not the dominant factor.
-
----
-
-## Feature Engineering
-
-We created advanced features such as:
-
-- 6-month and 12-month price variation
-- Peak vs off-peak price differences
-- Consumption trends
-- Margin-based metrics
-- Contract lifecycle indicators
-
-Correlation analysis showed high multicollinearity among some engineered price variables, which required feature selection.
+- Annual consumption (`cons_12m`) is one of the strongest churn indicators.
+- Time-based features (tenure, months active, contract renewal timing) significantly influence churn.
+- Customers close to renewal periods show higher churn probability.
+- Consumption behavior differs across churn vs non-churn customers.
+- Price variation features exist but are not dominant drivers.
 
 ---
 
-## Model Insights (Feature Importance)
+##  Feature Engineering
+
+Advanced features created:
+
+- 6-month and 12-month price variation metrics
+- Peak vs off-peak pricing differences
+- Consumption trend indicators
+- Margin-based variables
+- Contract lifecycle features
+
+Correlation analysis showed multicollinearity among some engineered price features, requiring feature reduction before modeling.
+
+---
+
+##  Model Insights (Feature Importance)
 
 Top drivers of churn:
 
 1. Annual Consumption (`cons_12m`)
 2. Net Margin
-3. Meter Rent Forecast
-4. Power Margin Variables
+3. Gross Margin (Electricity)
+4. Meter Rent Forecast
 5. Time-based Features (tenure, months_active)
 
-Price sensitivity features were present but not among the strongest predictors.
+Price sensitivity variables were present but not among the strongest predictors.
 
 ---
 
-##  Hypothesis Result
+#  Executive Summary (Final Conclusion)
 
-Is churn mainly driven by price sensitivity?
+### 🔎 Churn Overview
 
-**No.**
+- Churn is high in the SME division  
+- Nearly 10% churn across ~15k customers  
 
-Price sensitivity is a weak contributor, but the main drivers are:
+The likelihood of churn can be measured and predicted using customer consumption, margin, and lifecycle data.
 
-- Customer consumption behavior
-- Profitability structure (margins)
-- Contract lifecycle timing
-- Fixed recurring charges
-
-Churn is more behavioral and structural rather than purely price-driven.
+A sensitivity analysis was conducted to evaluate the impact of price changes on churn behavior.
 
 ---
 
-##  Business Recommendations
+###  Key Findings
 
-Based on the analysis:
-
-- Focus on contract renewal retention strategies.
-- Monitor high-consumption customers to prevent bill shock.
-- Segment customers by profitability.
-- Improve onboarding for new customers.
-- Launch targeted retention campaigns before contract expiry.
+- Price sensitivity is **not** the primary driver of churn.
+- Net and gross margins on electricity are the largest contributors to churn over the past 12 months.
+- Customer consumption behavior is a stronger indicator than price variation.
+- Contract lifecycle timing plays a major role.
 
 ---
 
-## 📂 Project Workflow
+##  Final Takeaway
 
-- Task 1 – Business Understanding
-- Task 2 – Exploratory Data Analysis
-- Task 3 – Feature Engineering
-- Task 4 – Modeling & Feature Importance Analysis
+Churn at PowerCo is driven more by structural and behavioral factors than by price sensitivity.
+
+To effectively reduce churn, the company should prioritize:
+
+- Contract renewal management
+- High-consumption customer monitoring
+- Margin-based segmentation
+- Customer engagement strategies
+
+Instead of relying heavily on discounts, PowerCo should adopt a data-driven retention strategy.
 
 ---
 
-## 🏁 Final Conclusion
-
-Customer churn at PowerCo is influenced more by usage behavior and contract timing than price sensitivity.
-To reduce churn, the company should focus on lifecycle management and customer behavior tracking instead of only adjusting pricing.
-
----
-
-##  Tools Used
+## Tools Used
 
 - Python
 - Pandas
 - NumPy
 - Matplotlib / Seaborn
 - Scikit-learn
-
----
